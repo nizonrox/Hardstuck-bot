@@ -1,0 +1,2 @@
+# Hardstuck-bot
+Discord bot
