@@ -11,10 +11,11 @@ Bot made, aimed to keep track of daily custom game schedules for autistic kids t
 ### Work in progress
 1. Change from if statements to a command handeling system (Started)
 2. Reply to commands; to confirm an action
-3. implement Kayn Riot API
+3. Implement Kayn Riot API
 4. Consider changing from Presistent Cache to MongoDB
 5. Add command to change thumbnail of event
 6. On event remove, deleted the event message
+7. Implement flexible ban system
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
