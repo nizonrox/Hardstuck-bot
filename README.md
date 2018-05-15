@@ -37,4 +37,4 @@ Bot made, aimed to keep track of daily custom game schedules for autistic kids t
 2.1.0 - Added coinflip & Join reserve<br />
 2.0.0 - Code overhaul
 
-![License](https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png)
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
