@@ -1,5 +1,5 @@
 # HardStuck Bot v2.3.0+dev
-Bot made, aimed to keep track of daily custom game schedules for autistic kids that don't show up.
+Bot made and aimed to keep track of daily custom game schedules for autistic kids that doesn't show up.
 
 ### Current commands:
 * Create Name|Details
