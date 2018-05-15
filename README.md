@@ -16,6 +16,7 @@ Bot made, aimed to keep track of daily custom game schedules for autistic kids t
 5. Add command to change thumbnail of event
 6. On event remove, deleted the event message
 7. Implement flexible ban system
+8. Implement extensive logging system
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
