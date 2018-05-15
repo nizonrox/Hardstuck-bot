@@ -1,4 +1,4 @@
-# League Customs Bot v2.2.1
+# HardStuck Bot v2.2.1
 Bot made, aimed to keep track of daily custom game schedules for autistic kids that don't show up.
 
 ### Current commands:
