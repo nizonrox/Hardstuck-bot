@@ -5,6 +5,8 @@ const { prefix, token, _comment, admin, bot, host_channel }  = require('./config
 const cache = require('persistent-cache');
 const db = cache();
 
+var dbcurrent = '1';
+
 //Command Handler
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands');
@@ -14,18 +16,21 @@ for (const file of commandFiles) {
 }
 
 //Database Hooker $$$
-if (db.keysSync().includes('eventname')) {
-	var eventname = db.getSync('eventname');
-	var eventdetails = db.getSync('eventdetails');
-	var eventcreator = db.getSync('eventcreator');
-	var eventmembers = db.getSync('eventmembers');
-	var eventreserve = db.getSync('eventreserve');
-	var idofmaker = db.getSync('idofmaker');
-	var messageid = db.getSync('messageid');
-	console.log('Detected DataBase, loaded.');
-}
-else
-{
+if (db.keysSync().includes('dbversion')) {
+	dbversion = db.getSync('dbversion');
+	console.log('Database found on version: ' + dbversion);
+	if (dbversion = dbcurrent) {
+		eventname = db.getSync('eventname');
+		eventdetails = db.getSync('eventdetails');
+		eventcreator = db.getSync('eventcreator');
+		eventmembers = db.getSync('eventmembers');
+		eventreserve = db.getSync('eventreserve');
+		idofmaker = db.getSync('idofmaker');
+		messageid = db.getSync('messageid');
+		console.log('Database was compatible and was loaded!');
+	}
+	else
+	{
 	db.putSync('eventname', '0');
 	db.putSync('eventdetails', '');
 	db.putSync('eventcreator', '');
@@ -33,16 +38,39 @@ else
 	db.putSync('eventreserve', []);
 	db.putSync('idofmaker', '');
 	db.putSync('messageid', '');
-	console.log('No DataBase detected, created.');
-	var eventname = db.getSync('eventname');
-	var eventdetails = db.getSync('eventdetails');
-	var eventcreator = db.getSync('eventcreator');
-	var eventmembers = db.getSync('eventmembers');
-	var eventreserve = db.getSync('eventreserve');
-	var idofmaker = db.getSync('idofmaker');
-	var message = db.getSync('messageid');
+	db.putSync('dbversion', dbcurrent);
+	console.log('Database was not found or outdated. New created');
+	eventname = db.getSync('eventname');
+	eventdetails = db.getSync('eventdetails');
+	eventcreator = db.getSync('eventcreator');
+	eventmembers = db.getSync('eventmembers');
+	eventreserve = db.getSync('eventreserve');
+	idofmaker = db.getSync('idofmaker');
+	message = db.getSync('messageid');
 	console.log('New DataBase, loaded.');
+	};
 };
+
+function savecache() {
+	db.putSync('eventname', eventname);
+	db.putSync('eventdetails', eventdetails);
+	db.putSync('eventcreator', eventcreator);
+	db.putSync('eventmembers', eventmembers);
+	db.putSync('eventreserve', eventreserve);
+	db.putSync('idofmaker', idofmaker);
+	db.putSync('messageid', sentMessage.id);
+	console.log('Database Sync');
+};
+
+function cleanmem() {
+	eventname = '0';
+	eventdetails = '';
+	eventcreator = '';
+	eventmembers = [];
+	eventreserve = [];
+	idofmaker = '';
+}
+
 
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
