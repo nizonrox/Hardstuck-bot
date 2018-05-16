@@ -1,4 +1,4 @@
-# HardStuck Bot v2.3.1+dev
+# HardStuck Bot v2.3.2+dev
 Bot made and aimed to keep track of daily custom game schedules for autistic kids that doesn't show up.
 
 ### Current commands:
@@ -27,6 +27,7 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 [Mongoose](https://www.npmjs.com/package/mongoose) //MongoDB Module (Not in use)
 
 ### Change log:
+2.3.2 - Fully intergrade the data hooker $$$<br />
 2.3.1 - Clean up the data hooker $$$<br />
 2.3.0 - Command Handler<br />
 2.2.1 - Added config.json for ease of acces, ban system removed temp<br />
