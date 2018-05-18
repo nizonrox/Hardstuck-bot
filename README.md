@@ -1,4 +1,4 @@
-# HardStuck Bot v2.X.X+dev
+# HardStuck Bot v3.0.0+dev
 Bot made and aimed to keep track of daily custom game schedules for autistic kids that doesn't show up.
 
 ### Current commands:
@@ -9,14 +9,13 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 * Coinflip
 
 ### Work in progress
-1. Change from if statements to a command handeling system (Started)
-2. Reply to commands; to confirm an action
-3. Implement Kayn Riot API
-4. Consider changing from Presistent Cache to MongoDB
-5. Add command to change thumbnail of event
-6. On event remove, deleted the event message
-7. Implement flexible ban system
-8. Implement extensive logging system
+1. Reply to commands; to confirm an action
+2. Implement Kayn Riot API
+3. Hook up presistent cache to an online db.
+4. Add command to change thumbnail of event
+5. On event remove, deleted the event message
+6. Implement flexible ban system
+7. Implement extensive logging system
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
@@ -27,7 +26,7 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 [Mongoose](https://www.npmjs.com/package/mongoose) //MongoDB Module (Not in use)
 
 ### Change log:
-2.3.0 - Command Handler added<br />
+3.0.0 - Command Handler added, Database hook updated, Console colors added!<br />
 2.2.1 - Added config.json for ease of acces, ban system removed temp<br />
 2.2.0 - Locate replaced by automatic function<br />
 2.1.1 - Syntax error fixes<br />
