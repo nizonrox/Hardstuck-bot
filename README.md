@@ -23,7 +23,6 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 [Python2.7.X](https://www.python.org/) //Python, Duh<br />
 [Presistent Cache](https://www.npmjs.com/package/persistent-cache) //Database Module<br />
 [kayn](https://www.npmjs.com/package/kayn) //Riot Api module (Not in use)<br />
-[Mongoose](https://www.npmjs.com/package/mongoose) //MongoDB Module (Not in use)
 
 ### Change log:
 3.0.0 - Command Handler added, Database hook updated, Console colors added!<br />
