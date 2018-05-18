@@ -5,6 +5,7 @@ const { prefix, token, _comment, admin, host_channel }  = require('./config.json
 const cache = require('persistent-cache');
 const db = cache();
 
+var ran = '';
 var dbcurrent = '1';
 
 //Command Handler Setup
@@ -16,12 +17,12 @@ for (const file of commandFiles) {
 };
 
 client.on('ready', () => {
-	console.log(`Logged in as ${client.user.username}!`);
+	console.log('\x1b[33m%s\x1b[0m', `Logged in as ${client.user.username}!`);
 	client.user.setStatus('online');
 });
 
 
-//Database Check&Load
+//Database Hooker $$$
 if (db.keysSync().includes('dbversion') && dbcurrent == db.getSync('dbversion')) {
 	eventname = db.getSync('eventname');
 	eventdetails = db.getSync('eventdetails');
@@ -77,13 +78,14 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length + 1).split(/ +/);
 	const command = args.shift().toLowerCase();
+	ran = args.shift();
 	if (!client.commands.has(command)) return;
 	try {
 		client.commands.get(command).execute(message, args);
 	}
 	catch (error) {
-		console.error(error);
-		console.log('there was an error trying to execute that command!');
+		console.log('\x1b[34m%s\x1b[0m',message.author.username + ' Executed: ' + ran + ' Causing an error:');
+		console.error('\x1b[31m%s\x1b[0m', error);
 	}
 });
 	
