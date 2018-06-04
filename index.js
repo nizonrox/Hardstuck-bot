@@ -4,8 +4,8 @@ const client = new Discord.Client();
 const { prefix, token, _comment, admin, host_channel }  = require('./config.json');
 const cache = require('persistent-cache');
 const db = cache();
-
-var dbcurrent = '1';
+var coldboot = '0'
+var dbcurrent = '2';
 var sentMessage = '';
 
 client.commands = new Discord.Collection();
@@ -65,15 +65,6 @@ function savecache() {
 	console.log('Database Sync');
 };
 
-function cleanmem() {
-	eventname = '0';
-	eventdetails = '';
-	eventcreator = '';
-	eventmembers = [];
-	eventreserve = [];
-	idofmaker = '';
-}
-
 function embedmessage() {
 	embed = {
   "title": eventname,
@@ -81,7 +72,7 @@ function embedmessage() {
   "url": "https://grabify.link/VQHYXV",
   "color": 0xde21b8,
   "thumbnail": {
-    "url": "https://i.pinimg.com/originals/93/52/aa/9352aa8fe2011b7da46cf6d0d2e9d328.gif"
+    "url": "https://i.gifer.com/5Myt.gif"
   },
   "author": {
     "name": eventcreator,
@@ -107,6 +98,12 @@ client.on('message', async message => {
 	const args = message.content.slice(prefix.length + 1).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) return;
+	
+	if (coldboot == '1' && !eventname == '0') {
+		sentMessage = await client.channels.get(host_channel).fetchMessage(messageid);
+		console.log('\x1b[33m%s\x1b[0m','Event located');
+		coldboot = 0;
+	};
 	try {
 		client.commands.get(command).execute(message, args, embedmessage, client, host_channel, savecache);
 	}
