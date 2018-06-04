@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'join',
 	description: 'Joins the event as member or reserve.',
-	async execute(message, args, EmbedMessage, client, host_channel, savecache) {
+	async execute(message, args, embedmessage, client, host_channel, savecache) {
 		if (!eventname == '0') {
 			if (eventmembers.length <= '9') {
 				eventmembers.push(message.author.username);
