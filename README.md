@@ -6,7 +6,7 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 * Remove
 * Join (reserve)
 * Leave
-* Coinflip
+* Coinflip (Deleted for now)
 
 ### Work in progress
 1. Reply to commands; to confirm an action
@@ -25,7 +25,7 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 [kayn](https://www.npmjs.com/package/kayn) //Riot Api module (Not in use)<br />
 
 ### Change log:
-3.0.0 - Command Handler added, Database hook updated, Console colors added!<br />
+3.0.0 - Command Handler added, Database hook updated, Console colors added! Coinflip removed :(<br />
 2.2.1 - Added config.json for ease of acces, ban system removed temp<br />
 2.2.0 - Locate replaced by automatic function<br />
 2.1.1 - Syntax error fixes<br />
