@@ -2,7 +2,7 @@ module.exports = {
 	name: 'create',
 	description: 'Creates an event.',
 	args: true,
-	async execute(message, args, EmbedMessage, client, host_channel, savecache) {
+	async execute(message, args, embedmessage, client, host_channel, savecache) {
 		eventname = args[0];
 		eventdetails = args[1];
 		eventcreator = message.author.username;
