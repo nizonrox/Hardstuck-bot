@@ -14,7 +14,7 @@ module.exports = {
 					console.log('\x1b[34m%s\x1b[0m',message.author.username + ' Has been added as a reserve');
 				};
 			};
-			EmbedMessage();
+			embedmessage();
 			await sentMessage.edit({ embed });
 			savecache();
 		};
