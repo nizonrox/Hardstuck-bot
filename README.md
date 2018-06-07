@@ -1,21 +1,18 @@
-# HardStuck Bot v3.0.0
-Bot made and aimed to keep track of daily custom game schedules for autistic kids that doesn't show up.
+# HardStuck Bot v3.1.0
+HardStuck is a Discord.js bot coded single handedly by Nizonrox; What a legend.
 
 ### Current commands:
 * Create Name|Details
 * Remove
 * Join (reserve)
 * Leave
-* Coinflip (Deleted for now)
+* Coinflip
 
 ### Work in progress
-1. Reply to commands; to confirm an action
-2. Implement Kayn Riot API
-3. Hook up presistent cache to an online db.
-4. Add command to change thumbnail of event
-5. On event remove, deleted the event message
-6. Implement flexible ban system
-7. Implement extensive logging system
+1. Implement Kayn Riot API
+2. Add command to change thumbnail of event
+3. Implement flexible ban system
+4. Implement extensive logging system
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
@@ -25,6 +22,7 @@ Bot made and aimed to keep track of daily custom game schedules for autistic kid
 [kayn](https://www.npmjs.com/package/kayn) //Riot Api module (Not in use)<br />
 
 ### Change log:
+3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
 3.0.0 - Command Handler added, Database hook updated, Console colors added! Coinflip removed :(<br />
 2.2.1 - Added config.json for ease of acces, ban system removed temp<br />
 2.2.0 - Locate replaced by automatic function<br />
