@@ -4,9 +4,8 @@ const client = new Discord.Client();
 const { prefix, token, _comment, admin, host_channel }  = require('./config.json');
 const cache = require('persistent-cache');
 const db = cache();
-var coldboot = '0'
-var dbcurrent = '2';
-var sentMessage = '';
+
+var dbcurrent = '1';
 
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands');
@@ -22,16 +21,8 @@ client.on('ready', () => {
 
 if (db.keysSync().includes('dbversion')) {
 	dbversion = db.getSync('dbversion');
-	console.log('Database found on version: ' + dbversion);
 	if (dbversion == dbcurrent) {
-		eventname = db.getSync('eventname');
-		eventdetails = db.getSync('eventdetails');
-		eventcreator = db.getSync('eventcreator');
-		eventmembers = db.getSync('eventmembers');
-		eventreserve = db.getSync('eventreserve');
-		idofmaker = db.getSync('idofmaker');
-		messageid = db.getSync('messageid');
-		console.log('\x1b[32m%s\x1b[0m', 'Database was compatible. Loaded!');
+		console.log('\x1b[32m%s\x1b[0m', 'Database found is compatible!');
 	}
 	else
 	{
@@ -43,36 +34,20 @@ if (db.keysSync().includes('dbversion')) {
 	db.putSync('idofmaker', '');
 	db.putSync('messageid', '');
 	db.putSync('dbversion', dbcurrent);
-	eventname = db.getSync('eventname');
-	eventdetails = db.getSync('eventdetails');
-	eventcreator = db.getSync('eventcreator');
-	eventmembers = db.getSync('eventmembers');
-	eventreserve = db.getSync('eventreserve');
-	idofmaker = db.getSync('idofmaker');
-	message = db.getSync('messageid');
-	console.log('\x1b[31m%s\x1b[0m', 'Database was not compatible or not found. New created and loaded!');
+	console.log('\x1b[31m%s\x1b[0m', 'Database was not found or not compatible.');
+	console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
 	};
 };
 
-function savecache() {
-	db.putSync('eventname', eventname);
-	db.putSync('eventdetails', eventdetails);
-	db.putSync('eventcreator', eventcreator);
-	db.putSync('eventmembers', eventmembers);
-	db.putSync('eventreserve', eventreserve);
-	db.putSync('idofmaker', idofmaker);
-	db.putSync('messageid', sentMessage.id);
-	console.log('Database Sync');
-};
 
-function embedmessage() {
+function buildmessage() {
 	embed = {
   "title": eventname,
   "description": eventdetails,
   "url": "https://grabify.link/VQHYXV",
   "color": 0xde21b8,
   "thumbnail": {
-    "url": "https://i.gifer.com/5Myt.gif"
+    "url": "https://i.giphy.com/iqE3LircFY5ck.gif"
   },
   "author": {
     "name": eventcreator,
@@ -92,20 +67,14 @@ function embedmessage() {
 };
 };
 
-
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length + 1).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) return;
 	
-	if (coldboot == '1' && !eventname == '0') {
-		sentMessage = await client.channels.get(host_channel).fetchMessage(messageid);
-		console.log('\x1b[33m%s\x1b[0m','Event located');
-		coldboot = 0;
-	};
 	try {
-		client.commands.get(command).execute(message, args, embedmessage, client, host_channel, savecache);
+		client.commands.get(command).execute(message, args, client, buildmessage, host_channel);
 	}
 	catch (error) {
 		console.error(error);
@@ -113,7 +82,5 @@ client.on('message', async message => {
 	}
 });
 	
-
-
 
 client.login(token);
