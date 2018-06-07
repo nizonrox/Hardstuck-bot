@@ -1,4 +1,4 @@
-# HardStuck Bot v3.0.0+dev
+# HardStuck Bot v3.0.0
 Bot made and aimed to keep track of daily custom game schedules for autistic kids that doesn't show up.
 
 ### Current commands:
