@@ -7,6 +7,7 @@ const db = cache();
 
 var dbcurrent = '1';
 
+//Command Loader
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands');
 for (const file of commandFiles) {
@@ -14,11 +15,13 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 };
 
+//Startup Commands
 client.on('ready', () => {
 	console.log('\x1b[33m%s\x1b[0m', `Logged in as ${client.user.username}!`);
 	client.user.setStatus('online');
 });
 
+//Database Check
 if (db.keysSync().includes('dbversion')) {
 	dbversion = db.getSync('dbversion');
 	if (dbversion == dbcurrent) {
@@ -26,6 +29,20 @@ if (db.keysSync().includes('dbversion')) {
 	}
 	else
 	{
+		db.putSync('eventname', '0');
+		db.putSync('eventdetails', '');
+		db.putSync('eventcreator', '');
+		db.putSync('eventmembers', []);
+		db.putSync('eventreserve', []);
+		db.putSync('idofmaker', '');
+		db.putSync('messageid', '');
+		db.putSync('dbversion', dbcurrent);
+		console.log('\x1b[31m%s\x1b[0m', 'Database was not compatible.');
+		console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
+	};
+}
+else
+{
 	db.putSync('eventname', '0');
 	db.putSync('eventdetails', '');
 	db.putSync('eventcreator', '');
@@ -34,12 +51,11 @@ if (db.keysSync().includes('dbversion')) {
 	db.putSync('idofmaker', '');
 	db.putSync('messageid', '');
 	db.putSync('dbversion', dbcurrent);
-	console.log('\x1b[31m%s\x1b[0m', 'Database was not found or not compatible.');
+	console.log('\x1b[31m%s\x1b[0m', 'Database was not found.');
 	console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
-	};
 };
 
-
+//Embed Setup
 function buildmessage() {
 	embed = {
   "title": eventname,
@@ -67,12 +83,12 @@ function buildmessage() {
 };
 };
 
+//Command Handler
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length + 1).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) return;
-	
 	try {
 		client.commands.get(command).execute(message, args, client, buildmessage, host_channel);
 	}
@@ -81,6 +97,5 @@ client.on('message', async message => {
 		console.log('\x1b[34m%s\x1b[0m','there was an error trying to execute that command!');
 	}
 });
-	
 
 client.login(token);
