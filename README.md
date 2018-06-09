@@ -1,5 +1,5 @@
 # HardStuck Bot v3.1.1
-HardStuck is a Discord.js bot coded single handedly by Nizonrox; What a legend.
+HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!!
 
 ### Current commands:
 * Create Name|Details
