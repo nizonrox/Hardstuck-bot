@@ -6,3 +6,4 @@ npm i persistent-cache
 Improvments:
 Python 2.7
 Erlpack
+npm install sodium
