@@ -9,10 +9,11 @@ HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!
 * Coinflip
 
 ### Work in progress
-1. Implement Kayn Riot API
+1. Check for channel permissions before crashing to an error
+2. Implement extensive logging system
 2. Add command to change thumbnail of event
 3. Implement flexible ban system
-4. Implement extensive logging system
+5. Implement Kayn Riot API
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
@@ -22,6 +23,7 @@ HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!
 [kayn](https://www.npmjs.com/package/kayn) //Riot Api module (Not in use)<br />
 
 ### Change log:
+3.2.0 - Planned: 1,2 in WOP.<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
 3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
 3.0.0 - Command Handler added, Database hook updated, Console colors added! Coinflip removed.<br />
