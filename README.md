@@ -15,10 +15,11 @@ Rank tracking system is still MIA and might be 4 ever.
 * Coinflip
 
 ### Work in progress
-1. Implement Kayn Riot API
+1. Check for channel permissions before crashing to an error
+2. Implement extensive logging system
 2. Add command to change thumbnail of event
 3. Implement flexible ban system
-4. Implement extensive logging system
+5. Implement Kayn Riot API
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
