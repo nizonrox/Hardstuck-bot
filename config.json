@@ -1,7 +1,7 @@
 {
     "prefix": "!event",
-    "token": "NDQwMzgwNDM2NTIzMzg0ODMy.DfwbJw.yOw-_c4LsReP3cfnNiw4yZlyeT8",
-	"_comment": "      Nizon                Cowaiii              Kento-chan             plat-win",
-	"admin": ["209847814719668225", "159248871967424512", "176741729993490432", "321628453088526338"],
-	"host_channel": "429326540250021908"
+    "token": "Insert bot token",
+	"_comment": "     nizonrox   Used to mark each id what a name to identify each admin easily",
+	"admin": ["209847814719668225"],
+	"host_channel": "ID of host channel"
 }
