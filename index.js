@@ -60,7 +60,7 @@ function buildmessage() {
 	embed = {
   "title": eventname,
   "description": eventdetails,
-  "url": "https://grabify.link/VQHYXV",
+  "url": "https://i.giphy.com/iqE3LircFY5ck.gif",
   "color": 0xde21b8,
   "thumbnail": {
     "url": "https://i.giphy.com/iqE3LircFY5ck.gif"
