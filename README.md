@@ -1,5 +1,11 @@
-# HardStuck Bot v3.1.1
-HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!!
+# Discord Bot v3.1.2
+The bot was named Hardstuck as a discord meme, coded by NizonRox.
+
+### What does this bot do?
+HardStuck is here to keep track of planned custom events helt on a discord server between friends,<br />
+the bot was intended to only do that but later branched out to aiming for the skyes so to say.<br />
+There came demands for keeping track of the discord users ranks and a coin flip methode.<br />
+Rank tracking system is still MIA and might be 4 ever.
 
 ### Current commands:
 * Create Name|Details
@@ -19,9 +25,10 @@ HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!
 [Erlpack](https://www.npmjs.com/package/erlpack) //Preformance Module (Requires Python 2.7.X)<br />
 [Python2.7.X](https://www.python.org/) //Python, Duh<br />
 [Presistent Cache](https://www.npmjs.com/package/persistent-cache) //Database Module<br />
-[kayn](https://www.npmjs.com/package/kayn) //Riot Api module (Not in use)<br />
+[Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
+3.1.2 - Streamlined alof of stuff, just getting the repo ready for public<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
 3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
 3.0.0 - Command Handler added, Database hook updated, Console colors added! Coinflip removed.<br />
@@ -29,6 +36,8 @@ HardStuck is a Discord.js bot coded single handedly by Nizonrox! What a legend!!
 2.2.0 - Locate replaced by automatic function.<br />
 2.1.1 - Syntax error fixes.<br />
 2.1.0 - Added coinflip & Join reserve.<br />
-2.0.0 - Code overhaul.
+2.0.0 - Code overhaul.<br />
+Pre 2 - Spaghet code, be happy it's not documented in this repo<br />
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.<br />
+Copyright [2019] [NizonRox]
