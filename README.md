@@ -1,5 +1,6 @@
 # Discord Bot v3.1.2
-The bot was named Hardstuck as a discord meme, coded by NizonRox.
+The bot was named Hardstuck as a discord meme, coded by NizonRox.<br />
+npm.install contains the needed programs/modules to efficiently use this bot.<br />
 
 ### What does this bot do?
 HardStuck is here to keep track of planned custom events helt on a discord server between friends,<br />
