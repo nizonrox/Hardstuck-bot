@@ -20,6 +20,7 @@ Rank tracking system is still MIA and might be 4 ever.
 2. Add command to change thumbnail of event
 3. Implement flexible ban system
 5. Implement Kayn Riot API
+6. Change DB
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
@@ -29,6 +30,7 @@ Rank tracking system is still MIA and might be 4 ever.
 [Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
+3.2.0 - Code clean up; Make everything work as intended<br />
 3.1.2 - Streamlined alof of stuff, just getting the repo ready for public<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
 3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
