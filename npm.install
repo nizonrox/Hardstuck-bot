@@ -10,4 +10,4 @@ npm i persistent-cache
 
 Improvments:
 npm install hammerandchisel/erlpack (requires git)
-npm install sodium (cant get this installed as of now)
+npm install sodium (check their npm page for install structions if it fails to install)
