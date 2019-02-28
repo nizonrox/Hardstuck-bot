@@ -1,9 +1,9 @@
 Required:
+Python 2.7
 npm i discord.js node-opus
 npm i persistent-cache
 
 
 Improvments:
-Python 2.7
 Erlpack
 npm install sodium
