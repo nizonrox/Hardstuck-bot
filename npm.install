@@ -9,5 +9,5 @@ npm i discord.js node-opus
 npm i persistent-cache
 
 Improvments:
-Erlpack
-npm install sodium
+npm install hammerandchisel/erlpack (requires git)
+npm install sodium (cant get this installed as of now)
