@@ -24,6 +24,7 @@ Rank tracking system is still MIA and might be 4 ever.
 ### Might add/fix
 1. Check for channel permissions before crashing to an error
 2. Add command to change thumbnail of event
+3. A few slice commands might be messy
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
