@@ -36,6 +36,7 @@ if (db.keysSync().includes('dbversion')) {
 		db.putSync('eventreserve', []);
 		db.putSync('idofmaker', '');
 		db.putSync('messageid', '');
+		db.putSync('tumbnail', '');
 		db.putSync('dbversion', dbcurrent);
 		console.log('\x1b[31m%s\x1b[0m', 'Database was not compatible.');
 		console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
@@ -50,20 +51,23 @@ else
 	db.putSync('eventreserve', []);
 	db.putSync('idofmaker', '');
 	db.putSync('messageid', '');
+	db.putSync('tumbnail', '');
 	db.putSync('dbversion', dbcurrent);
 	console.log('\x1b[31m%s\x1b[0m', 'Database was not found.');
 	console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
 };
+
+//Shared Functions here
 
 //Embed Setup
 function buildmessage() {
 	embed = {
   "title": eventname,
   "description": eventdetails,
-  "url": "https://i.giphy.com/iqE3LircFY5ck.gif",
+  "url": tumbnail,
   "color": 0xde21b8,
   "thumbnail": {
-    "url": "https://i.giphy.com/iqE3LircFY5ck.gif"
+    "url": tumbnail
   },
   "author": {
     "name": eventcreator,
@@ -83,14 +87,38 @@ function buildmessage() {
 };
 };
 
+
+function grabdatabase() {
+	eventname = db.getSync('eventname');
+	eventdetails = db.getSync('eventdetails');
+	eventcreator = db.getSync('eventcreator');
+	eventmembers = db.getSync('eventmembers');
+	eventreserve = db.getSync('eventreserve');
+	tumbnail = db.getSync('tumbnail');
+	idofmaker = db.getSync('idofmaker');
+	messageid = db.getSync('messageid');
+	console.log('Database Grab');
+}
+
+function databasesync() {
+	db.putSync('eventname', eventname);
+	db.putSync('eventdetails', eventdetails);
+	db.putSync('eventcreator', eventcreator);
+	db.putSync('eventmembers', eventmembers);
+	db.putSync('eventreserve', eventreserve);
+	db.putSync('tumbnail', tumbnail);
+	db.putSync('idofmaker', idofmaker);
+	db.putSync('messageid', sentMessage.id);
+	console.log('Database Sync');	
+}
 //Command Handler
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-	const args = message.content.slice(prefix.length + 1).split(/ +/);
+	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) return;
 	try {
-		client.commands.get(command).execute(message, args, client, buildmessage, host_channel);
+		client.commands.get(command).execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync);
 	}
 	catch (error) {
 		console.error(error);
