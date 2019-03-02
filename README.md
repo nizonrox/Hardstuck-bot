@@ -1,4 +1,4 @@
-# Discord Bot v3.1.2
+# Discord Bot v3.2.0
 The bot was named Hardstuck as a discord meme, coded by NizonRox.<br />
 npm.install contains the needed programs/modules to efficiently use this bot.<br />
 
