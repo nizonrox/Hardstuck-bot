@@ -1,19 +1,13 @@
 module.exports = {
 	name: 'join',
 	description: 'Joins the event as member or reserve.',
-	async execute(message, args, client, buildmessage, host_channel) {
+	async execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync) {
 		//Declare DB
 		const cache = require('persistent-cache');
 		const db = cache();
 
 		//Grabing DB
-		eventname = db.getSync('eventname');
-		eventdetails = db.getSync('eventdetails');
-		eventcreator = db.getSync('eventcreator');
-		eventmembers = db.getSync('eventmembers');
-		eventreserve = db.getSync('eventreserve');
-		idofmaker = db.getSync('idofmaker');
-		messageid = db.getSync('messageid');
+		grabdatabase();
 		
 		//Check for event
 		if (!eventname == '0') {
@@ -42,15 +36,8 @@ module.exports = {
 				buildmessage();
 				sentMessage = await client.channels.get(host_channel).fetchMessage(messageid);
 				await sentMessage.edit({ embed });
-				//putSync DB + Log
-				db.putSync('eventname', eventname);
-				db.putSync('eventdetails', eventdetails);
-				db.putSync('eventcreator', eventcreator);
-				db.putSync('eventmembers', eventmembers);
-				db.putSync('eventreserve', eventreserve);
-				db.putSync('idofmaker', idofmaker);
-				db.putSync('messageid', sentMessage.id);
-				console.log('Database Sync');
+				//Database Sync
+				databasesync();
 			};
 		};
 	},
