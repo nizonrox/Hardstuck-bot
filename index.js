@@ -5,6 +5,7 @@ const { prefix, token, _comment, admin, host_channel }  = require('./config.json
 const cache = require('persistent-cache');
 const db = cache();
 
+//Database version, changed when database won't be compatible
 var dbcurrent = '1';
 
 //Command Loader
@@ -24,11 +25,13 @@ client.on('ready', () => {
 //Database Check
 if (db.keysSync().includes('dbversion')) {
 	dbversion = db.getSync('dbversion');
+	//Checking for database stuff
 	if (dbversion == dbcurrent) {
 		console.log('\x1b[32m%s\x1b[0m', 'Database found is compatible!');
 	}
 	else
 	{
+		//Database not compatible, scrab and remake
 		db.putSync('eventname', '0');
 		db.putSync('eventdetails', '');
 		db.putSync('eventcreator', '');
@@ -44,6 +47,7 @@ if (db.keysSync().includes('dbversion')) {
 }
 else
 {
+	//Database not found, new being created
 	db.putSync('eventname', '0');
 	db.putSync('eventdetails', '');
 	db.putSync('eventcreator', '');
@@ -87,7 +91,7 @@ function buildmessage() {
 };
 };
 
-
+//Grab all database values
 function grabdatabase() {
 	eventname = db.getSync('eventname');
 	eventdetails = db.getSync('eventdetails');
@@ -100,6 +104,7 @@ function grabdatabase() {
 	console.log('Database Grab');
 }
 
+//Stores all values to the database
 function databasesync() {
 	db.putSync('eventname', eventname);
 	db.putSync('eventdetails', eventdetails);
@@ -114,17 +119,21 @@ function databasesync() {
 
 //Command Handler
 client.on('message', async message => {
+	//Check for prefix and make sure not to react to the bots own messages
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
 	if (!client.commands.has(command)) return;
 	try {
+		//Running command from folder and passing on values and shared functions
 		client.commands.get(command).execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync);
 	}
 	catch (error) {
+		//Stop the bot from running into an error and stalling
 		console.error(error);
 		console.log('\x1b[34m%s\x1b[0m','there was an error trying to execute that command!');
 	}
 });
 
+//Bot logs in here
 client.login(token);
