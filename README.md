@@ -48,4 +48,4 @@ Rank tracking system is still MIA and might be 4 ever.
 Pre 2 - Spaghet code, be happy it's not documented in this repo<br />
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.<br />
-Copyright [2019] [NizonRox]
+Copyright © 2019 NizonRox
