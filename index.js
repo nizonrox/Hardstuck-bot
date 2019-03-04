@@ -71,7 +71,7 @@ function buildmessage() {
   },
   "author": {
     "name": eventcreator,
-    "url": "https://grabify.link/VQHYXV",
+    "url": client.users.get(idofmaker).avatarURL,
     "icon_url": client.users.get(idofmaker).avatarURL
   },
   "fields": [
@@ -111,6 +111,7 @@ function databasesync() {
 	db.putSync('messageid', sentMessage.id);
 	console.log('Database Sync');	
 }
+
 //Command Handler
 client.on('message', async message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
