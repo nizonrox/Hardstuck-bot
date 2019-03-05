@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'coinflip',
 	description: 'Flips a damn coin.',
-	!!create Test | test | http://news.cdn.leagueoflegends.com/public/images/misc/GameBox.jpg
+	async execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync) {
 
 		//Function cheat
 		function coingen() {
