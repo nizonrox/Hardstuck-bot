@@ -3,19 +3,19 @@ module.exports = {
 	description: 'Flips a damn coin.',
 	async execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync) {
 
-		//Function cheat
+		//Embed message generation
 		function coingen() {
 	embed = {
   "title": "Coin flip",
   "description": coinreply,
-  "url": "https://grabify.link/VQHYXV",
+  "url": "https://en.wikipedia.org/wiki/Coin_flipping",
   "color": 0xde21b8,
   "thumbnail": {
     "url": coinurl,
   },
   "author": {
     "name": 'RNGesus',
-    "url": "https://grabify.link/VQHYXV",
+    "url": "https://en.wikipedia.org/wiki/Coin_flipping",
     "icon_url": 'http://i2.kym-cdn.com/photos/images/newsfeed/000/963/471/857.png'
   },
 };
@@ -35,6 +35,7 @@ module.exports = {
 		};
 		coingen();
 		client.channels.get(host_channel).send({ embed });
+		message.reply('Coin flipped!');
 		console.log('\x1b[34m%s\x1b[0m',message.author.username + ' Flipped a coin ' + coinreply);
 	
 	
