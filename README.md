@@ -23,9 +23,8 @@ Rank tracking system is still MIA and might be 4 ever.
 
 ### Might add/fix
 1. Check for channel permissions before crashing to an error
-2. Add command to change thumbnail of event
-3. Messy slice actions in commands
-4. Redo DB sotring
+2. Messy slice in create event
+3. Redo DB storing
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
