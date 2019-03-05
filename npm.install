@@ -1,9 +1,13 @@
-Required:
+Programs required:
+Python 2.7
+.NET Framework 2.0 SDK
+Microsoft Visual Studio 2005 or 3
+
+Modules required:
+npm install --global --production windows-build-tools
 npm i discord.js node-opus
 npm i persistent-cache
 
-
 Improvments:
-Python 2.7
-Erlpack
-npm install sodium
+npm install hammerandchisel/erlpack (requires git)
+npm install sodium (check their npm page for install structions if it fails to install)

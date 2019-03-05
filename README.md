@@ -1,5 +1,6 @@
-# Discord Bot v3.1.2
-The bot was named Hardstuck as a discord meme, coded by NizonRox.
+# Discord Bot v3.2.0
+The bot was named Hardstuck as a discord meme, coded by NizonRox.<br />
+npm.install contains the needed programs/modules to efficiently use this bot.<br />
 
 ### What does this bot do?
 HardStuck is here to keep track of planned custom events helt on a discord server between friends,<br />
@@ -15,11 +16,15 @@ Rank tracking system is still MIA and might be 4 ever.
 * Coinflip
 
 ### Work in progress
+1. Implement extensive logging system
+2. Implement flexible ban system
+3. Implement Kayn Riot API
+4. Change DB
+
+### Might add/fix
 1. Check for channel permissions before crashing to an error
-2. Implement extensive logging system
-2. Add command to change thumbnail of event
-3. Implement flexible ban system
-5. Implement Kayn Riot API
+2. Messy slice in create event
+3. Redo DB storing
 
 ### Dependencies / Documentation:
 [Discord.js](https://discord.js.org/#/docs/main/stable/general/welcome) //Discord.js Module<br />
@@ -29,6 +34,7 @@ Rank tracking system is still MIA and might be 4 ever.
 [Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
+3.2.0 - Code clean up; Make everything work as intended<br />
 3.1.2 - Streamlined alof of stuff, just getting the repo ready for public<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
 3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
@@ -41,4 +47,4 @@ Rank tracking system is still MIA and might be 4 ever.
 Pre 2 - Spaghet code, be happy it's not documented in this repo<br />
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.<br />
-Copyright [2019] [NizonRox]
+Copyright © 2019 NizonRox
