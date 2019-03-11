@@ -19,8 +19,8 @@ module.exports = {
         eventname = '0';
         eventdetails = '';
         eventcreator = '';
-        eventmembers = [];
-        eventreserve = [];
+        eventmembers = [''];
+        eventreserve = [''];
         tumbnail = '';
         idofmaker = '';
         //Reply and log to console + Delete message

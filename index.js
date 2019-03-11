@@ -39,8 +39,8 @@ if (db.keysSync().includes('dbversion')) {
         db.putSync('eventname', '0');
         db.putSync('eventdetails', '');
         db.putSync('eventcreator', '');
-        db.putSync('eventmembers', []);
-        db.putSync('eventreserve', []);
+        db.putSync('eventmembers', ['']);
+        db.putSync('eventreserve', ['']);
         db.putSync('idofmaker', '');
         db.putSync('messageid', '');
         db.putSync('tumbnail', '');
@@ -53,8 +53,8 @@ if (db.keysSync().includes('dbversion')) {
     db.putSync('eventname', '0');
     db.putSync('eventdetails', '');
     db.putSync('eventcreator', '');
-    db.putSync('eventmembers', []);
-    db.putSync('eventreserve', []);
+    db.putSync('eventmembers', ['']);
+    db.putSync('eventreserve', ['']);
     db.putSync('idofmaker', '');
     db.putSync('messageid', '');
     db.putSync('tumbnail', '');

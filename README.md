@@ -1,4 +1,4 @@
-# Discord Bot v3.2.1
+# Discord Bot v3.2.2
 The bot was named Hardstuck as a discord meme, coded by NizonRox.<br />
 npm.install contains the needed programs/modules to efficiently use this bot.<br />
 
@@ -32,6 +32,7 @@ There came demands for keeping track of the discord users ranks and a coin flip 
 [Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
+3.2.2 - Hotfix for 's in creating database and in removing event<br />
 3.2.1 - Admin status checking done, streamlining the codes format.<br />
 3.2.0 - Code clean up; Make everything work as intended.<br />
 3.1.2 - Streamlined alof of stuff, just getting the repo ready for public.<br />
