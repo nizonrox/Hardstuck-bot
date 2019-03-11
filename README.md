@@ -32,7 +32,7 @@ There came demands for keeping track of the discord users ranks and a coin flip 
 [Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
-3.2.1 - Admin status checking, done<br />
+3.2.1 - Admin status checking done, streamlining the codes format<br />
 3.2.0 - Code clean up; Make everything work as intended<br />
 3.1.2 - Streamlined alof of stuff, just getting the repo ready for public<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
