@@ -126,7 +126,8 @@ client.on('message', async message => {
 	if (!client.commands.has(command)) return;
 	try {
 		//Running command from folder and passing on values and shared functions
-		client.commands.get(command).execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync);
+		client.commands.get(command).execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync, admin);
+		message.delete();
 	}
 	catch (error) {
 		//Stop the bot from running into an error and stalling
