@@ -1,7 +1,13 @@
 module.exports = {
 	name: 'create',
 	description: 'Creates an event.',
-	async execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync) {
+	async execute(message, args, client, buildmessage, host_channel, grabdatabase, databasesync, admin) {
+		//Admin check
+		if (!admin.includes(message.author.id)) {
+			message.reply('You dont have the required permissions');
+			return;
+		};
+		
 		//Declare DB
 		const cache = require('persistent-cache');
 		const db = cache();
