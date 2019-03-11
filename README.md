@@ -6,7 +6,6 @@ npm.install contains the needed programs/modules to efficiently use this bot.<br
 HardStuck is here to keep track of planned custom events helt on a discord server between friends,<br />
 the bot was intended to only do that but later branched out to aiming for the skyes so to say.<br />
 There came demands for keeping track of the discord users ranks and a coin flip methode.<br />
-Rank tracking system is still MIA and might be 4 ever.
 
 ### Current commands:
 * Create Name|Details
