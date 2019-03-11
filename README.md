@@ -32,9 +32,9 @@ There came demands for keeping track of the discord users ranks and a coin flip 
 [Kayn](https://www.npmjs.com/package/kayn) //Riot Api module (To be Implemented)<br />
 
 ### Change log:
-3.2.1 - Admin status checking done, streamlining the codes format<br />
-3.2.0 - Code clean up; Make everything work as intended<br />
-3.1.2 - Streamlined alof of stuff, just getting the repo ready for public<br />
+3.2.1 - Admin status checking done, streamlining the codes format.<br />
+3.2.0 - Code clean up; Make everything work as intended.<br />
+3.1.2 - Streamlined alof of stuff, just getting the repo ready for public.<br />
 3.1.1 - Database creation hot fixed, join only letting people into reserve hot fixed.<br />
 3.1.0 - Responding to commands, Database hooker fired, Command overhaul, Coinflip is back!<br />
 3.0.0 - Command Handler added, Database hook updated, Console colors added! Coinflip removed.<br />
@@ -43,7 +43,7 @@ There came demands for keeping track of the discord users ranks and a coin flip 
 2.1.1 - Syntax error fixes.<br />
 2.1.0 - Added coinflip & Join reserve.<br />
 2.0.0 - Code overhaul.<br />
-Pre 2 - Spaghet code, be happy it's not documented in this repo<br />
+Pre 2 - Spaghet code, be happy it's not documented in this repo.<br />
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.<br />
 Copyright © 2019 NizonRox
