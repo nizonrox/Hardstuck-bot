@@ -16,7 +16,7 @@ module.exports = {
                 eventmembers.splice(index, 1);
             };
             message.reply('Left the event!');
-            console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Has been removed from the members list');
+            console.log(message.author.username + ' Has been removed from the members list');
         };
         if (eventreserve.includes(message.author.username)) {
             var index = eventreserve.indexOf(message.author.username);
@@ -24,7 +24,7 @@ module.exports = {
                 eventreserve.splice(index, 1);
             };
             message.reply('Left the event!');
-            console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Has been removed from the reserve list');
+            console.log(message.author.username + ' Has been removed from the reserve list');
         };
         buildmessage();
         sentMessage = await client.channels.get(host_channel).fetchMessage(messageid);

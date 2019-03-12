@@ -10,6 +10,7 @@ const {
 } = require('./config.json');
 const cache = require('persistent-cache');
 const db = cache();
+require('console-stamp')(console, '[HH:MM:ss]');
 
 //Database version, changed when database won't be compatible
 var dbcurrent = '1';
@@ -24,7 +25,7 @@ for (const file of commandFiles) {
 
 //Startup Commands
 client.on('ready', () => {
-    console.log('\x1b[33m%s\x1b[0m', `Logged in as ${client.user.username}!`);
+    console.info(`Logged in as ${client.user.username}!`);
     client.user.setStatus('online');
 });
 
@@ -33,7 +34,7 @@ if (db.keysSync().includes('dbversion')) {
     dbversion = db.getSync('dbversion');
     //Checking for database stuff
     if (dbversion == dbcurrent) {
-        console.log('\x1b[32m%s\x1b[0m', 'Database found is compatible!');
+        console.info('Database found is compatible!');
     } else {
         //Database not compatible, scrab and remake
         db.putSync('eventname', '0');
@@ -59,8 +60,8 @@ if (db.keysSync().includes('dbversion')) {
     db.putSync('messageid', '');
     db.putSync('tumbnail', '');
     db.putSync('dbversion', dbcurrent);
-    console.log('\x1b[31m%s\x1b[0m', 'Database was not found.');
-    console.log('\x1b[32m%s\x1b[0m', 'New Database created!');
+    console.warn('Database was not found.');
+    console.info('New Database created!');
 };
 
 //Shared Functions here
@@ -102,7 +103,7 @@ function grabdatabase() {
     tumbnail = db.getSync('tumbnail');
     idofmaker = db.getSync('idofmaker');
     messageid = db.getSync('messageid');
-    console.log('Database Grab');
+    console.info('Database Loaded');
 }
 
 //Stores all values to the database
@@ -115,7 +116,7 @@ function databasesync() {
     db.putSync('tumbnail', tumbnail);
     db.putSync('idofmaker', idofmaker);
     db.putSync('messageid', sentMessage.id);
-    console.log('Database Sync');
+    console.info('Database Updated');
 }
 
 //Command Handler
@@ -132,7 +133,7 @@ client.on('message', async message => {
     } catch (error) {
         //Stop the bot from running into an error and stalling
         console.error(error);
-        console.log('\x1b[34m%s\x1b[0m', 'there was an error trying to execute that command!');
+        console.error('there was an error trying to execute that command!');
     }
 });
 

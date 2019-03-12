@@ -18,7 +18,7 @@ module.exports = {
                     if (eventreserve.includes(message.author.username)) return;
                     eventreserve.push(message.author.username);
                     message.reply('Joined event as reserve!');
-                    console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Has been added as a reserve');
+                    console.log(message.author.username + ' Has been added as a reserve');
                 } else {
                     if (eventreserve.includes(message.author.username)) {
                         var index = eventreserve.indexOf(message.author.username);
@@ -28,7 +28,7 @@ module.exports = {
                     };
                     eventmembers.push(message.author.username);
                     message.reply('Joined event as member!');
-                    console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Has been added as a member');
+                    console.log(message.author.username + ' Has been added as a member');
                 };
                 //Generate & Edit message
                 buildmessage();

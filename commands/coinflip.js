@@ -36,7 +36,7 @@ module.exports = {
             embed
         });
         message.reply('Coin flipped!');
-        console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Flipped a coin ' + coinreply);
+        console.log(message.author.username + ' Flipped a coin ' + coinreply);
 
 
     },

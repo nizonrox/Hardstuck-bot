@@ -5,6 +5,7 @@ module.exports = {
         //Admin check
         if (!admin.includes(message.author.id)) {
             message.reply('You dont have the required permissions');
+			console.log(message.author.username + 'Tried to remove an event without permissions');
             return;
         };
 
@@ -14,6 +15,12 @@ module.exports = {
 
         //Grabing DB
         grabdatabase();
+
+        if (eventname == 0) {
+            message.reply('There is no current event.');
+			console.log(message.author.username + ' Tried to remove an event while no event is active');
+            return;
+        };
 
         //NULLing variables
         eventname = '0';
@@ -25,7 +32,7 @@ module.exports = {
         idofmaker = '';
         //Reply and log to console + Delete message
         message.reply('Event removed!');
-        console.log('\x1b[34m%s\x1b[0m', message.author.username + ' Has removed the current event');
+        console.log(message.author.username + ' Has removed the current event');
         sentMessage = await client.channels.get(host_channel).fetchMessage(messageid);
         await sentMessage.delete();
         //putSync DB + Log
