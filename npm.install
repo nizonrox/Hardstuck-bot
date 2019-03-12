@@ -7,6 +7,7 @@ Modules required:
 npm install --global --production windows-build-tools
 npm i discord.js node-opus
 npm i persistent-cache
+npm i console-stamp --save
 
 Improvments:
 npm install hammerandchisel/erlpack (requires git)
