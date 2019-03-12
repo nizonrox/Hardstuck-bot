@@ -15,8 +15,7 @@ There came demands for keeping track of the discord users ranks and a coin flip 
 * Coinflip
 
 ### Work in progress
-1. Implement extensive logging system
-2. Implement flexible ban system
+1. Implement flexible ban system
 3. Implement Kayn Riot API
 
 ### Might add/fix
